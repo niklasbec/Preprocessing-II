@@ -1,3 +1,5 @@
+@import 'variables';
+
 .home {
 
   .content-section {
@@ -11,11 +13,18 @@
     .text-content {
       width: 48%;
       padding-right: 1%;
+      @media @mobile {
+        width: 98%;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
+
+      @media @mobile {
+        width: 98%;
+      }
 
       img {
         border-radius: 10px;
@@ -26,11 +35,12 @@
   .inverse-content {
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
+    flex-direction: column-reverse;
 
     .text-content {
       padding-left: 1%;
       padding-right: 0;
-    }
+ }
 
     .img-content {
       padding-right: 1%;
@@ -42,8 +52,15 @@
     width: 75%;
     margin: 0 auto 30px;
 
+    @media @mobile {
+      width: 100%;
+    }
+
     img {
       border-radius: 10px;
+      @media @mobile {
+        width: 100%;
+      }
     }
   }
 
@@ -53,9 +70,78 @@
     display: flex;
     justify-content: space-between;
 
+    @media @mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+
     .destination {
       width: 30%;
       margin-bottom: 30px;
+
+      @media @mobile {
+        width: 80%;
+      }
     }
   }
 }// home
+
+header {
+  margin-top: 3%;
+
+  div {
+    padding-bottom: 3%;
+    .flexbox(row, space-between, center, wrap);
+  }
+}
+
+.first-image {
+  border-top: 2px dashed @border-color;
+}
+
+section h2 {
+  margin-top: 3%;
+}
+
+section .p-border {
+  border-bottom: 2px dashed @border-color;
+}
+
+.btn {
+  .button(#26A2B6, center, white, 8px, 70%, 18%, 8% );
+  p {
+    font-size: 2rem;
+    position: relative;
+    top: 0.8rem;
+  }
+  @media @mobile {
+    .button(#26A2B6, center, white, 8px, 100%, 18%, 8% );
+  }
+}
+
+@media @mobile {
+  header div {
+    display: flex;
+    justify-content: center;
+  }
+  header div h1 {
+    margin-bottom: 3%;
+  }
+  .content-section {
+    flex-direction: column;
+  //   .text-content {
+  //     width: 98%;
+  //     background-color: red;
+  // }
+  }
+}
+
+@keyframes grow {
+  0% {transform: scale(1.0)}
+  50% {transform: scale(3)}
+  100% {transform: scale(1.0)}
+}
+
+#animation{
+  .animation(grow, 1s, 1s, 1)
+}
