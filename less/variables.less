@@ -12,3 +12,23 @@
 @shark: #212529;
 @eastern-blue: #17A2B8;
 @sandy-beach: #FFEBCD;
+@border-color: lighten(gray, 20%);
+
+.flexbox(@flex-dir, @just-cont, @align-items, @wrap) {
+    display: flex;
+    flex-direction: @flex-dir;
+    justify-content: @just-cont;
+    align-items: @align-items;
+    flex-wrap: @wrap;
+}
+
+
+@mobile: ~'(max-width: 501px)';
+
+
+.animation(@name, @delay, @duration, @iteration) {
+    animation-name: @name;
+    animation-delay: @delay;
+    animation-duration: @duration;
+    animation-iteration-count: @iteration;
+}
